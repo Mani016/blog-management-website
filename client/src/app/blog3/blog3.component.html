@@ -1,0 +1,74 @@
+<h1 align="center">BLOG3</h1><br><br>
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>BannerImage</h4>
+<img src="../download.jpg">
+    <h4>Blog Title</h4>
+    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+    <h4>Blog Description</h4>
+    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+  </div>
+
+  <div class="col-lg-6">
+    <h4>Author</h4>
+    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+    <h4>Author Description</h4>
+    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+    <h4>Other Details</h4>
+    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+  </div>
+</div>
+  <h1>COMMENT</h1> 
+<div class="row">
+
+      <div class="col-md-8">
+<form>
+  <div class="form-group" style="font-family: sans-serif ; font-size: 18; font-weight: bold;margin-top:50px">
+    <label>Name:</label>
+    <input type="text"   placeholder="Name" #name style="width:75%;margin-left:10%"><br>
+    <label>Email:</label>
+    <input type="email" placeholder="Email" #email style="width:75%;margin-left:10%"><br>
+    <label>Contact:</label>
+    <input type="number" placeholder="Contact no" #contact style="width:75%;margin-left:7%"><br>
+    <textarea class="form-control" placeholder="Please write something" rows="5" #topic style="width:75%;margin-left:17%"></textarea>
+  </div>
+ 
+</form>
+
+<button type="Post" class="btn btn-primary"  style="margin-left: 17%;width:200px" (click)="onClickSubmit(name,topic)" >Post</button>
+
+
+<ul class="list-group">
+  <div style="margin-top: 10px;">
+     
+  <li  *ngFor="let name of names.controls "
+   class="list-group-item"   
+   style="margin-top: 10px;width:75%;margin-left:17%;height: auto;">
+   <div>
+    <i class="fa fa-trash" (click)="onClickRemove(topic)"></i><br>
+   </div>  
+   {{ name.value }}<br>
+  
+  </li>
+  <li  *ngFor="let topic of topics.controls "
+   class="list-group-item"   
+   style="margin-top: 10px;width:75%;margin-left:17%;height: auto;">
+   <div>
+    <i class="fa fa-trash" (click)="onClickRemove(topic)"></i><br>
+   </div>  
+     {{ topic.value }} <br>
+  </li>
+</div>
+</ul>
+
+      </div>
+  
+</div>
+
+
+
+
+
