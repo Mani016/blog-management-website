@@ -1,0 +1,17 @@
+<form>
+  <div class="form-group" style="font-family: sans-serif ; font-size: 18; font-weight: bold;margin-top:50px">
+    <label>Banner Image</label>
+    <input type="file" name="pic" accept="image/*"><br>
+    <label>Blog Title:</label>
+    <input type="text" placeholder="Blog Title" #title style="width:75%;margin-left:6%">
+    <label>Blog Description:</label><br>
+    <textarea  placeholder="Blog Description" rows="5" #topic style="width:75% ;margin-left:13%"></textarea><br>
+    <label>Author:</label>
+    <input type="text" placeholder="Author" #author style="width:75%;margin-left:7%">
+    <label>Author Description:</label>
+    <textarea  placeholder="Author Description" rows="5" #topic style="width:75%;margin-left:13%"></textarea>
+  </div>
+ 
+</form>
+
+<button type="Post" class="btn btn-primary"  style="margin-left: 17%;width:200px" (click)="onClickSubmit()" >Create Blog</button>

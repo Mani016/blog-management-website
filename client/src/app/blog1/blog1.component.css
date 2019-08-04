@@ -39,3 +39,17 @@
         text-align: center;
         margin-top: 20px;
     }
+    body{
+        padding:50px;
+      }
+      .panel-heading{
+        font-size:22px;
+        font-weight:bold;
+      }
+      .panel-body b{
+        font-size:20px;
+      }
+      .panel-body p{
+        font-size:18px;
+        padding-left:12px;
+      }

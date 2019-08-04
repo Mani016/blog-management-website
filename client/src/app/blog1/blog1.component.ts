@@ -11,31 +11,28 @@ import { Component, OnInit } from '@angular/core';
 
 export class Blog1Component implements OnInit {
 form = new FormGroup({
-    names: new FormArray([
-      new FormControl(
-        'Manisha'
-      )]),
+    
     topics : new FormArray([
     new FormControl(
-      'Nice')]),
+      '')]),
   });
- onClickSubmit(name:HTMLInputElement,topic : HTMLInputElement){
+ onClickSubmit(topic : HTMLInputElement){
 //console.log(topic.value);
 
   
 if(topic.value != "" )
 {
-  (this.names as FormArray).insert(0,new FormControl(name.value));
+
   (this.topics as FormArray).insert(0,new FormControl(topic.value));
 
   topic.value ='';
-  name.value='';
+ 
 }
 
   }
 
-  onClickRemove(name:FormControl,topic:FormControl){
-    
+  onClickRemove(topic:FormControl){
+     
       let index = this.topics.controls.indexOf(topic);
       this.topics.removeAt(index);
   }
@@ -45,10 +42,9 @@ if(topic.value != "" )
 
   ngOnInit() {
   }
-  get names(){
-    return this.form.get('names') as FormArray;
-  }
+ 
   get topics(){
     return this.form.get('topics') as FormArray;
   }
+  
 }

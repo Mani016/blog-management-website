@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { Blog1Component } from './blog1/blog1.component';
 import { Blog2Component } from './blog2/blog2.component';
 import { Blog3Component } from './blog3/blog3.component';
+import { CreateblogComponent } from './createblog/createblog.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { Blog3Component } from './blog3/blog3.component';
     HomeComponent,
     Blog1Component,
     Blog2Component,
-    Blog3Component
+    Blog3Component,
+    CreateblogComponent
   ],
   imports: [
     BrowserModule,
