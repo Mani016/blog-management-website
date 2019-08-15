@@ -1,20 +1,29 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core/src/metadata/ng_module';
-
+import{NgModule} from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { Blog1Component } from './blog1/blog1.component';
-import { Blog2Component } from './blog2/blog2.component';
-import { Blog3Component } from './blog3/blog3.component';
-import { CreateblogComponent } from './createblog/createblog.component';
+import { BlogAddComponent } from './blog-add/blog-add.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { BlogGetComponent } from './blog-get/blog-get.component';
 
-export const AppRoutes: Routes = [
+const routes: Routes = [
 	{ path: '', component: LoginComponent },
-	{ path: 'home', component: HomeComponent },
-	{path:'blog1',component:Blog1Component},
-	{path:'blog2',component:Blog2Component},
-	{path:'blog3',component:Blog3Component},
-	{path:'createblog',component:CreateblogComponent}
+	{
+		path: 'create',
+		component: BlogAddComponent
+	  },
+	  {
+		path: 'edit/:id',
+		component: BlogEditComponent
+	  },
+	  {
+		path: 'blogs',
+		component: BlogGetComponent
+	  }
 ];
-
-export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);
+@NgModule({
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
+  })
+  export class AppRoutingModule { }

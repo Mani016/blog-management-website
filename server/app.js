@@ -5,6 +5,14 @@ const mongoose = require('mongoose');
 const url = 'mongodb://localhost/blogDb';
 
 const User = require('./model/user');
+var cors = require('cors')
+
+app.use(cors())
+mongoose.Promise = global.Promise;
+mongoose.connect(url, { useNewUrlParser: true }).then(
+  () => {console.log('Database is connected') },
+  err => { console.log('Can not connect to the database'+ err)}
+);
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended : false}))

@@ -1,0 +1,58 @@
+<app-home></app-home>
+<div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="group">
+          <label class="col-md-4">Blog Title</label>
+          <input type="text" class="form-control" 
+            formControlName="BlogTitle" 
+            #BlogTitle />
+        </div>
+        <div *ngIf="angForm.controls['BlogTitle'].invalid && (angForm.controls['BlogTitle'].dirty || angForm.controls['BlogTitle'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['BlogTitle'].errors.required">
+            Blog Title is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Blog Description </label>
+          <textarea class="form-control" rows = 7 cols = "5"
+          formControlName="BlogDescription" 
+          #BlogDescription></textarea>
+        </div>
+        <div *ngIf="angForm.controls['BlogDescription'].invalid && (angForm.controls['BlogDescription'].dirty || angForm.controls['BlogDescription'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['BlogDescription'].errors.required">
+            Blog Description is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Author</label>
+          <input type="text" class="form-control" 
+            formControlName="Author" 
+            #Author
+          />
+        </div>
+        <div *ngIf="angForm.controls['Author'].invalid && (angForm.controls['Author'].dirty || angForm.controls['Author'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['Author'].errors.required">
+            Author is required.
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4">Author Description</label>
+            <textarea class="form-control" rows = 7 cols = "5"
+            formControlName="AuthorDescription" 
+            #AuthorDescription></textarea>
+          </div>
+          <div *ngIf="angForm.controls['AuthorDescription'].invalid && (angForm.controls['AuthorDescription'].dirty || angForm.controls['AuthorDescription'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['AuthorDescription'].errors.required">
+              Author Description is required.
+            </div>
+          </div>
+        <div class="form-group">
+          <button (click) = "addblog(BlogTitle.value, BlogDescription.value,Author.value,AuthorDescription.value)" type="submit" class="btn btn-primary"
+          [disabled]="angForm.pristine || angForm.invalid" >
+            Create Blog
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

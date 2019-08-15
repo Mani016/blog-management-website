@@ -22,12 +22,13 @@ export class LoginComponent {
   		this.loginService.validateLogin(this.user).subscribe(result => {
         console.log('result is ', result);
         if(result['status'] === 'success') {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/blogs']);
         } else {
           alert('Wrong username password');
         }
         
-      }, error => {
+      }, 
+      error => {
         console.log('error is ', error);
       });
   	} else {
