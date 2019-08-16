@@ -1,25 +1,18 @@
 <app-home></app-home>
-<table class="table table-hover">
-    <thead>
-    <tr>
-        <td><b>Blog Title</b></td>
-        <td><b>Blog Description</b></td>
-        <td><b>Author</b></td>
-        <td><b>Author Description</b></td>
-        <td colspan="2"><b>Actions</b></td>
-        
-        
-    </tr>
-    </thead>
-  
-    <tbody>
-        <tr *ngFor="let blog of blogs">
-            <td>{{ blog.BlogTitle }}</td>
-            <td>{{ blog.BlogDescription }}</td>
-            <td>{{ blog.Author }}</td>
-            <td>{{ blog.AuthorDescription }}</td>
-            <td><a [routerLink]="['/edit', blog._id]" class="btn btn-primary">Edit</a></td>
-            <td><a (click) = "deleteblog(blog._id)" class="btn btn-danger">Delete</a></td>
-        </tr>
-    </tbody>
-  </table>
+
+
+  <div class="row card-group">
+    <div class="col-8"  *ngFor="let blog of blogs | slice:0:9">
+        <div class="card" style="width: 105rem; margin-top: 24px;">
+            <img class="card-img-top" src="assets/test-img.jpg" alt="Card image cap" style="width:105rem; height:29rem">
+            
+            <h3 class="card-title">{{blog.BlogTitle}}</h3>
+            <p class="card-text">{{blog.BlogDescription}}</p>
+            <p class="card-text">{{blog.Author}}</p>
+            <p class="card-text">{{blog.AuthorDescription}}</p>
+            <a [routerLink]="['/edit', blog._id]" class="btn btn-primary">Edit</a>
+            <a (click) = "deleteblog(blog._id)" class="btn btn-danger">Delete</a>
+
+        </div>
+    </div>
+</div>
